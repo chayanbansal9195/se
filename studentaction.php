@@ -1,7 +1,7 @@
 <?php
 extract($_POST);
 include "dbConfig.php";
-
+date_default_timezone_set("Asia/Kolkata");
 if($name==''){
     header('location:student.php');
 }
@@ -16,10 +16,12 @@ $max = $max + 1;
 
 $formno = "FORM0" . $max;
 
+$year = date("Y");
+$end = date("Y")+1;
+$session=$year.'-'.$end;
 
 // data insert
-$sql = mysqli_query($con, "INSERT INTO stdreg(`name`, `fname`, `mname`, `phno`, `aphno`, `landmark`, `city`, `pstation`, `postoffice`, `state`, `district`, `lexam`, `lschool`, `msecured`, `religion`, `caste`, `gender`, `newclass`, `date`, `time`, `formno`) VALUES ('$name','$fname','$mname','$phno','$aphno','$landmark','$city','$pstation','$postoffice','$state','$district','$lexam','$lschool','$msecured','$religion','$caste','$gender','$newclass','$date','$time','$formno')");
+ $sql = mysqli_query($con, "INSERT INTO stdreg(`name`, `fname`, `mname`, `phno`, `aphno`, `landmark`, `city`, `pstation`, `postoffice`, `state`, `district`, `lexam`, `lschool`, `msecured`, `religion`, `caste`, `gender`, `newclass`, `date`, `time`, `formno`,`session`) VALUES ('$name','$fname','$mname','$phno','$aphno','$landmark','$city','$pstation','$postoffice','$state','$district','$lexam','$lschool','$msecured','$religion','$caste','$gender','$newclass','$date','$time','$formno','$session')");
 
-header('location:index.php');
+ header('location:index.php');
 }
-?>

@@ -263,12 +263,14 @@ date_default_timezone_set("Asia/Kolkata");
                     <?php $today = date("h:m "); ?>
                     <input type="hidden" name="time" value="<?php echo $today ?>">
                 </td>
-            </tr>
+            </tr><br>
             <tr>
-                <td align="center">
-                <button type="submit" class="btn btn-success">Enroll</button>
+                <td>
+                <button type="submit" class="btn btn-success" style="margin-left:500px;width:100px;height:40px;font-size:15px;padding:10px 10px 10px 10px">Enroll</button>
+                <div style="margin-bottom:100px">
                 </td>
             </tr>
+            
 
 
 

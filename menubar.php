@@ -2,169 +2,178 @@
 
 <html>
 
-
+<head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
+    .menubar {
 
-.menubar {
+        overflow: hidden;
 
-overflow: hidden;
+        background-color: #75AAEE;
 
-background-color: #75AAEE;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 20px;
 
-font-family: Arial, Helvetica, sans-serif;
-margin-top: 20px;
+    }
 
-}
+    .menubar a {
 
-.menubar a {
+        float: left;
 
-float: left;
+        font-size: 16px;
 
-font-size: 16px;
+        color: white;
 
-color: white;
+        text-align: center;
 
-text-align: center;
+        padding: 14px 16px;
 
-padding: 14px 16px;
+        text-decoration: none;
 
-text-decoration: none;
+    }
 
-}
 
 
+    .dropdown1 {
 
-.dropdown1 {
+        float: left;
 
-float: left;
+        overflow: hidden;
 
-overflow: hidden;
+    }
 
-}
 
 
+    .dropdown1 .dropbtn1 {
 
-.dropdown1 .dropbtn1 {
+        font-size: 16px;
 
-font-size: 16px; 
+        border: none;
 
-border: none;
+        outline: none;
 
-outline: none;
+        color: white;
 
-color: white;
+        padding: 14px 16px;
 
-padding: 14px 16px;
+        background-color: inherit;
 
-background-color: inherit;
+        font-family: inherit;
 
-font-family: inherit;
+        margin: 0;
 
-margin: 0;
+    }
 
-}
 
 
+    .menubar a:hover,
+    .dropdown1:hover .dropbtn1 {
 
-.menubar a:hover, .dropdown1:hover .dropbtn1 {
+        background-color: blue;
 
-background-color: blue;
+    }
 
-}
 
 
+    .dropdown-content1 {
 
-.dropdown-content1 {
+        display: none;
 
-display: none;
+        position: absolute;
 
-position: absolute;
+        background-color: #f9f9f9;
 
-background-color: #f9f9f9;
+        min-width: 160px;
 
-min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 
-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
 
-z-index: 1;
+    }
 
-}
 
 
+    .dropdown-content1 a {
 
-.dropdown-content1 a {
+        float: none;
 
-float: none;
+        color: black;
 
-color: black;
+        padding: 12px 16px;
 
-padding: 12px 16px;
+        text-decoration: none;
 
-text-decoration: none;
+        display: block;
 
-display: block;
+        text-align: left;
 
-text-align: left;
+    }
 
-}
 
 
+    .dropdown-content1 a:hover {
 
-.dropdown-content1 a:hover {
+        background-color: #ddd;
 
-background-color: #ddd;
+    }
 
-}
 
 
+    .dropdown1:hover .dropdown-content1 {
 
-.dropdown1:hover .dropdown-content1 {
+        display: block;
 
-display: block;
+    }
 
-}
-
-.alert:hover
-{
-}
+    .alert:hover {}
 </style>
-
+    </head>
+    <body>
 
 
 <div class="menubar">
 
-<a href="?link=000">Home</a>
+    <a href="?link=000">Home</a>
+<!-- fee -->
+  <a href="?link=0FEE">Fee Structure</a> 
+    <!-- subject -->
 
-<div class="dropdown1">
+    <div class="dropdown1">
 
-<button class="dropbtn1">Fee Structure 
+        <button class="dropbtn1">Subject Entry and View
 
-<i class="fa fa-caret-down"></i>
+            <i class="fa fa-caret-down"></i>
 
-</button>
+        </button>
 
-<div class="dropdown-content1">
+        <div class="dropdown-content1">
+        <a href="?link=0SUBJE">Subject Entry</a>
+        <a href="?link=0SUBJ">Subject View</a>
+        </div>
+    </div>
 
-<!-- links -->
+    <!-- mark entry -->
+    <div class="dropdown1">
 
-</div> 
+        <button class="dropbtn1">Mark Entry and View
+
+            <i class="fa fa-caret-down"></i>
+
+        </button>
+
+        <div class="dropdown-content1">
+        <a href="?link=0MARKE">Mark Entry</a>
+        <a href="?link=0MARK">Mark View</a>
+        </div>
+    </div>
+    <!-- alert -->
+    <div style="float:right;"><?php include('new_add.php'); ?></div>
+    <a href="logout.php" style="float:right"><i class="fa fa-sign-out fa-fw"></i></a>
 </div>
 
-<!-- alert -->
-<div style="float:right;"><?php include('new_add.php'); ?></div>
-<a  href="logout.php" style="float:right" ><i class="fa fa-sign-out fa-fw"></i></a>
-</div>
-
-
-
-
-
-
-
-
-
+    </body>
+</html>

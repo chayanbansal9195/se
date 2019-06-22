@@ -9,7 +9,8 @@
 
     <style>
         td {
-            border: none;
+            padding: 15px 15px 15px 15px;
+
             text-align: center;
         }
         
@@ -36,7 +37,7 @@
 <tr>
   <td>
   <span style="font-size:20px;">Class:  </span>&nbsp;<select id="classname">
-    <option value="all">all</option>
+    <option value="all">All</option>
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -51,30 +52,13 @@
     <option value="12">12</option>
     
   </select>
-  <button class="btn" onClick="viewStudents();">View</button>
+  <button class="btn btn-info" onClick="viewStudents();">View</button>
   </td>
   </tr>
  </table>
  <br>
  <div id="viewdetails">
-    <table border="2px" height="100" width="50%" align="center" style="text-align:center">
-        <tr>
-        <th style="text-align:center">Serial No</th>
-            <th style="text-align:center">Admission Fee</th>
-            <th style="text-align:center">Tution Fee</th>
-            <th style="text-align:center">Monthly Fee</th>
-            <th style="text-align:center">Bus Fee</th>
-            <th style="text-align:center">Hostel Fee</th>
-        </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-    </table>
+    
  </div>
 <script>
     function viewStudents(){

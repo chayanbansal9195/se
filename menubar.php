@@ -67,6 +67,26 @@
         margin: 0;
 
     }
+    
+    .dropdown1 .dropbtn2 {
+
+font-size: 16px;
+
+border: none;
+
+outline: none;
+
+color: white;
+
+padding: 14px 16px;
+
+background-color: inherit;
+
+font-family: inherit;
+
+margin: 0;
+
+}
 
 
 
@@ -76,7 +96,13 @@
         background-color: blue;
 
     }
+    .menubar1 a:hover,
+    .dropdown1:hover .dropbtn2 {
 
+        background-color: none;
+
+    }
+    
 
 
     .dropdown-content1 {
@@ -170,10 +196,34 @@
         <a href="?link=0MARK">Mark View</a>
         </div>
     </div>
-    <!-- alert -->
-    <div style="float:right;"><?php include('new_add.php'); ?></div>
-    <a href="logout.php" style="float:right"><i class="fa fa-sign-out fa-fw"></i></a>
-</div>
+    <!-- monthly fee -->
+    <div class="dropdown1">
 
+        <button class="dropbtn1">Monthly Fees
+
+            <i class="fa fa-caret-down"></i>
+
+        </button>
+
+        <div class="dropdown-content1">
+        <a href="?link=0FEEE">Fee Entry</a>
+        <a href="?link=0FEEV">Fee View</a>
+        </div>
+    </div>
+    <!-- alert -->
+    <div style="float:right;" title="notification"><?php include('new_add.php'); ?></div>
+    
+</div>
+<?php
+          	if (isset($_SESSION['HOUSE_suc'])) {
+              //echo "<span class='alert alert-success'>".$success."</span>";
+             echo '<div class = "alert alert-success alert-dismissable">
+                 <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
+                 &times;
+                 </button>'.$_SESSION['HOUSE_suc'].'
+                 </div>';
+             unset($_SESSION['HOUSE_suc']);
+             }
+        ?>
     </body>
 </html>

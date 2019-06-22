@@ -7,7 +7,8 @@ $sql = mysqli_query($con, "select * from subject where class='$classname'");
 <td>
 
     <span style="font-size:20px;">Subject: </span>&nbsp;
-    <select name="subname" id="subject">
+    <select name="subname" id="sub">
+    <option value="">--Select--</option> 
         <?php while ($data = mysqli_fetch_assoc($sql)) { ?>
             <option value="<?php echo $data['subname'] ?>">
                 <?php echo $data['subname'] ?>
@@ -15,5 +16,5 @@ $sql = mysqli_query($con, "select * from subject where class='$classname'");
             
         <?php } ?>
     </select>
-    <input type="hidden" value="<?php echo $classname?>" name="class">
+    
 </td>

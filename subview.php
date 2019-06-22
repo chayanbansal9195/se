@@ -9,8 +9,9 @@
 
     <style>
         td {
-            border: none;
+            
             text-align: center;
+            padding: 20px 20px 20px 20px;
         }
         
 
@@ -29,6 +30,18 @@
 </head>
 
 <body>
+        <?php
+          	if (isset($_SESSION['HOUSE_suc'])) {
+              //echo "<span class='alert alert-success'>".$success."</span>";
+             echo '<div class = "alert alert-success alert-dismissable">
+                 <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
+                 &times;
+                 </button>'.$_SESSION['HOUSE_suc'].'
+                 </div>';
+             unset($_SESSION['HOUSE_suc']);
+             }
+        ?>
+
     <h2>SUBJECT VIEW</h2>
 
     <table style="text-align:center;margin-left:343px">
@@ -36,7 +49,7 @@
 <tr>
   <td>
   <span style="font-size:20px;">Class:  </span>&nbsp;<select id="classname">
-    <option value="all">all</option>
+    <option value="all">All</option>
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -51,24 +64,13 @@
     <option value="12">12</option>
     
   </select>
-  <button class="btn" onClick="viewStudents();">View</button>
+  <button class="btn btn-info" onClick="viewStudents();">View</button>
   </td>
   </tr>
  </table>
  <br>
  <div id="viewdetails">
-    <table border="2px" height="100" width="50%" align="center" style="text-align:center">
-        <tr>
-        <th style="text-align:center">Serial No</th>
-            <th style="text-align:center">Subject Name</th>
-            <th style="text-align:center">Subject Code</th>
-        </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-    </table>
+   
  </div>
 <script>
     function viewStudents(){

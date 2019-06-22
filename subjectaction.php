@@ -1,4 +1,5 @@
 <?php
+session_start();
     extract($_POST);
     include 'dbConfig.php';
 
@@ -21,6 +22,7 @@
 }
 $i++;
     }
+    $_SESSION['HOUSE_suc']="Successfully Updated...";
     header('location:api.php?link=0SUBJ');
     
    

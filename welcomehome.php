@@ -15,8 +15,10 @@
     </head>
     <body >
         <div class="container">
-       <img src="images/a.png" alt="" width="100px" height="100px" style="margin-left:500px;"> 
-       <h1 style="margin-top:100px;">WELCOME TO STUDENT ENROLLMENT DESK</h1>
+       <h1 style="margin:30px 140px 50px;">WELCOME TO STUDENT ENROLLMENT DESK</h1>
+
+        <?php include "slider.php"?>
+
 </div>
 
         <script src="" async defer></script>

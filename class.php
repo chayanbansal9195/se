@@ -25,6 +25,10 @@
             define('subview', '0SUBJ');
             define('markentry', '0MARKE');
             define('markview', '0MARK');
+            define('feeentry', '0FEEE');
+            define('feeview', '0FEEV');
+            define('feedetails', '0FVIE');
+            define('changepass','0CHNG');
             
             switch($value){
 				case home_page:
@@ -54,6 +58,22 @@
                 case markview:
                 $this->page_url="markview.php";
                 $this->page_title="Mark View";
+                break;
+                case feeentry:
+                $this->page_url="feeentry.php";
+                $this->page_title="Fee Entry";
+                break;
+                case feeview:
+                $this->page_url="feeview.php";
+                $this->page_title="Fee View";
+                break;
+                case feedetails:
+                $this->page_url="feedetails.php";
+                $this->page_title="STUDENT FEE DETAILS";
+                break;
+                case changepass:
+                $this->page_url="changepass.php";
+                $this->page_title="Change Password";
                 break;
                 
                

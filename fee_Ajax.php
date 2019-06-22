@@ -18,8 +18,6 @@ $sql = mysqli_query($con, "select * from feestruc where class='$classname'");
             <th style="text-align:center">Admission Fee</th>
             <th style="text-align:center">Tution Fee</th>
             <th style="text-align:center">Monthly Fee</th>
-            <th style="text-align:center">Bus Fee</th>
-            <th style="text-align:center">Hostel Fee</th>
         </tr>
     
       
@@ -33,8 +31,6 @@ $sql = mysqli_query($con, "select * from feestruc where class='$classname'");
             <td><?php echo $dta['admission']?></td>
             <td><?php echo $dta['tution']?></td>
             <td><?php echo $dta['monthly']?></td>
-            <td><?php echo $dta['bus']?></td>
-            <td><?php echo $dta['hostel']?></td>
 
           </tr>
         </tbody>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 extract($_POST);
 include "dbConfig.php";
 date_default_timezone_set("Asia/Kolkata");
@@ -22,6 +23,6 @@ $session=$year.'-'.$end;
 
 // data insert
  $sql = mysqli_query($con, "INSERT INTO stdreg(`name`, `fname`, `mname`, `phno`, `aphno`, `landmark`, `city`, `pstation`, `postoffice`, `state`, `district`, `lexam`, `lschool`, `msecured`, `religion`, `caste`, `gender`, `newclass`, `date`, `time`, `formno`,`session`) VALUES ('$name','$fname','$mname','$phno','$aphno','$landmark','$city','$pstation','$postoffice','$state','$district','$lexam','$lschool','$msecured','$religion','$caste','$gender','$newclass','$date','$time','$formno','$session')");
-
+ $_SESSION['HOUSE_suc']="Successfully Updated...";
  header('location:index.php');
 }

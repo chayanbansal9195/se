@@ -46,8 +46,8 @@ text-decoration: none;
 
 }
 a {
-    text-decoration: none;
-    color: red;
+    
+    color: #5B90D5;
 }
 
 /* panel */
@@ -88,13 +88,19 @@ box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
 transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
-
+body{
+            background-image: url('images/bg.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+             height: 200%;
+        }
 
 </style>
 
 <table>
     <tr>
-        <td width="15%" height="100" align="center" style="font-size:32px;margin-top:100px;"><a href="index.php">Student Enrollment Desk</a> </td>
+        <td width="15%" height="100" align="center" style="font-size:32px;margin-top:100px;"><a style="text-decoration: none;" href="index.php">Student Enrollment Desk</a> </td>
     </tr>
 </table>
 
@@ -102,10 +108,21 @@ transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 
 <a href="student.php">Student Register</a>
 </div>
+<?php
+          	if (isset($_SESSION['HOUSE_suc'])) {
+              //echo "<span class='alert alert-success'>".$success."</span>";
+             echo '<div class = "alert alert-success alert-dismissable">
+                 <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
+                 &times;
+                 </button>'.$_SESSION['HOUSE_suc'].'
+                 </div>';
+             unset($_SESSION['HOUSE_suc']);
+             }
+        ?>
 <!-- panel -->
 <div align=center class="col-lg-12">
-    <div class="panel panel-default;"style="margin:100px 350px 0px 350px;">
-        <div class="panel-heading" style="background:#212529;color:white">
+    <div class="panel panel-primary"style="margin:100px 350px 0px 350px;">
+        <div class="panel-heading" style="background:#5B90D5;color:white">
             <h4><i class="fa fa-image fa-fw"></i>Login</h4>
         </div>
         <!-- /.panel-heading -->
@@ -132,7 +149,7 @@ transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
               <tr>
                 <td width="263" height="63">&nbsp;</td>
                 <td width="459">
-                <input type="submit" name="login" class="btn btn-success"> 
+                <input type="submit" name="login" value="Login" class="btn btn-success"> 
                 </td>
               </tr>
 

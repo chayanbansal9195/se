@@ -56,14 +56,15 @@
 
     <h2 style="margin-bottom:20px;">MARK ENTRY</h2>
 
-
+<form action="marksaction.php" method="post" style="margin-top:30px;">
 
     <table style="text-align:center;margin-left:300px">
 
         <tr>
             <td>
-                <span style="font-size:20px;">Class: </span>&nbsp;<select name="class" id="classname">
-                    <option value="1">1</option>
+                <span style="font-size:20px;">Class: </span>&nbsp;<select onchange="viewsub();" name="class" id="classname">
+                <option value="">--Select--</option> 
+                <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
@@ -77,10 +78,11 @@
                     <option value="12">12</option>
 
                 </select>
-                <button class="btn" onClick="viewsub();">Subjects</button>
-                <button class="btn btn-info" onClick="viewstu();">Students</button>
+
+
             </td>
-            <form action="marksaction.php" method="post" style="margin-top:30px;">
+
+            
                 <td>
 
                     <?php
@@ -95,16 +97,12 @@
                         <span style="font-size:20px;">Subject: </span>&nbsp;
 
                         <select name="subname" id="subject">
-                            <?php while ($data = mysqli_fetch_assoc($sql)) { ?>
-                                <option value="<?php echo $data['subname'] ?>">
-                                    <?php echo $data['subname'] ?>
-                                </option>
-                            <?php } ?>
+                            <option value="">--Select--</option>
                         </select>
-                        <input type="hidden" value="" name="class">
-                        
+
+                    </div>
                 </td>
-                </div>
+
                 <td>
                     <span style="font-size:20px;">Exam: </span>&nbsp;<select name="exam">
                         <option value="unit test 1">unit test 1</option>
@@ -115,98 +113,86 @@
                         <option value="annual">annual</option>
 
                     </select>
+                    <button type="button" class="btn btn-info" onClick="viewstu();">View</button>
                 </td>
         </tr>
     </table>
-        <!-- student list -->
-        <div id="viewdet">
-        <table border="2px" height="100" width="50%" align="center" style="text-align:center">
-            <tr>
-                <th style="text-align:center">Serial No</th>
-                <th style="text-align:center">Student Name</th>
-                <th style="text-align:center">Marks</th>
-                
-            </tr><br>
-           
-            <tr>
-                <td>    </td>
-                <td><input type="hidden" name="name[]" value="" readonly></td>
-                
-                <td><input type="hidden" name="marks[]" placeholder="Enter Marks"></td>
-            
-            </tr>
-            
-        </table>
-        </div>
-        <br>
-        <button class="btn btn-dark" style="margin-left:630px;height:40px;width:80px;">Add</button>
-        <div style="margin-bottom:100px">
+    <!-- student list -->
+    <div id="viewdet">
+        
+    </div>
+    
+    <div style="margin-bottom:100px">
         </form>
 
 
 
 
-            <!-- class based subject -->
-            <script>
-                function viewsub() {
-                    var className = document.getElementById('classname').value;
-                    //console.log(a);
-                    var httpx;
+        <!-- class based subject -->
+        <script>
+            function viewsub() {
+                var className = document.getElementById('classname').value;
+                //console.log(a);
+                var httpx;
 
 
-                    if (window.XMLHttpRequest) {
-                        httpx = new XMLHttpRequest();
+                if (window.XMLHttpRequest) {
+                    httpx = new XMLHttpRequest();
 
-                    } else {
-                        httpx = new ActiveXObject("Microsoft.XMLHTTP");
-
-                    }
-
-                    httpx.open("GET", "subselect_Ajax.php?carrylink=" + className, true); //ajax engine send an asynchronous call to the server via dis_ajax.php with state_id
-                    httpx.onreadystatechange = function() {
-                        if (httpx.readyState == 4 && httpx.status == 200) {
-
-                            document.getElementById("viewdetails").innerHTML = httpx.responseText; //place the data in the specified position i.e., in table data dist 
-
-                        }
-
-                    }
-                    httpx.send(null);
-
-
+                } else {
+                    httpx = new ActiveXObject("Microsoft.XMLHTTP");
 
                 }
 
-                // view students
-                function viewstu() {
-                    var className = document.getElementById('classname').value;
-                    //console.log(a);
-                    var httpx;
+                httpx.open("GET", "subselect_Ajax.php?carrylink=" + className, true); //ajax engine send an asynchronous call to the server via dis_ajax.php with state_id
+                httpx.onreadystatechange = function() {
+                    if (httpx.readyState == 4 && httpx.status == 200) {
 
-
-                    if (window.XMLHttpRequest) {
-                        httpx = new XMLHttpRequest();
-
-                    } else {
-                        httpx = new ActiveXObject("Microsoft.XMLHTTP");
+                        document.getElementById("viewdetails").innerHTML = httpx.responseText; //place the data in the specified position i.e., in table data dist 
 
                     }
-
-                    httpx.open("GET", "stulist_Ajax.php?carrylink=" + className, true); //ajax engine send an asynchronous call to the server via dis_ajax.php with state_id
-                    httpx.onreadystatechange = function() {
-                        if (httpx.readyState == 4 && httpx.status == 200) {
-
-                            document.getElementById("viewdet").innerHTML = httpx.responseText; //place the data in the specified position i.e., in table data dist 
-
-                        }
-
-                    }
-                    httpx.send(null);
-
-
 
                 }
-            </script>
+                httpx.send(null);
+
+
+
+            }
+
+            // view students
+            function viewstu() {
+                var className = document.getElementById('classname').value;
+                var sub = document.getElementById('sub').value;
+
+                var combo = className + '^' + sub;
+                
+                //console.log(a);
+                var httpx;
+
+
+                if (window.XMLHttpRequest) {
+                    httpx = new XMLHttpRequest();
+
+                } else {
+                    httpx = new ActiveXObject("Microsoft.XMLHTTP");
+
+                }
+
+                httpx.open("GET", "stulist_Ajax.php?carrylink=" + combo, true); //ajax engine send an asynchronous call to the server via dis_ajax.php with state_id
+                httpx.onreadystatechange = function() {
+                    if (httpx.readyState == 4 && httpx.status == 200) {
+
+                        document.getElementById("viewdet").innerHTML = httpx.responseText; //place the data in the specified position i.e., in table data dist 
+
+                    }
+
+                }
+                httpx.send(null);
+
+
+
+            }
+        </script>
 
 
 </body>

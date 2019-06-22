@@ -38,10 +38,12 @@
             border-radius: 4px;
 
         }
-        td{
+
+        td {
             padding: 20px 20px 20px 20px;
         }
-        th{
+
+        th {
             font-size: 20px;
             padding: 20px 20px 20px 20px;
         }
@@ -82,7 +84,7 @@
 
         <!-- add row column -->
         <input type="hidden" name="totalrow" id="totalrow" value="1" />
-        <table style="text-align:center;margin-left:330px;float:left;margin-right:200px" >
+        <table style="text-align:center;margin-left:330px;float:left;margin-right:200px">
             <tr>
                 <td>
                     Add&nbsp; <input type="text" id="norows" maxlength="3" style="width:60px; text-align:center;" value="1" onfocus="this.select();" />&nbsp; Row(s)
@@ -91,11 +93,12 @@
             </tr>
         </table>
         <!-- end -->
-        <table style="text-align:center;margin-left:500px" >
+        <table style="text-align:center;margin-left:500px">
 
             <tr>
                 <td>
                     <span style="font-size:20px;">Class: </span>&nbsp;<select name="class" id="classname">
+                        <option value="">--Select--</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -113,7 +116,7 @@
                 </td>
             </tr>
         </table>
-        
+
         <table border="2px" height="100" width="50%" align="center" style="text-align:center" id="mytable">
             <tr>
                 <th style="text-align:center">Subject Name</th>

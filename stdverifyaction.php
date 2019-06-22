@@ -2,7 +2,7 @@
 extract($_POST);
 date_default_timezone_set("Asia/Kolkata");
 $year = date("Y");
-$month = date("d");
+$month = date("m");
 include "dbConfig.php";
 
 // reg no
@@ -14,10 +14,14 @@ $regno = "RE" . $year . $month . $i;
 
 // session
 $year = date("Y");
-$end = date("Y")+1;
-$session=$year.'-'.$end;
+$end = date("Y") + 1;
+$session = $year . '-' . $end;
 
-$sql = mysqli_query($con, "INSERT INTO `admin`(`name`, `fname`, `formno`, `class`, `regno`, `date`, `time`, `paidamount`,`session`) VALUES('$name','$fname','$formno','$class','$regno','$date','$time','$paidamount','$session')");
+// remarks
+$remarks = "Admission";
+
+
+$sql = mysqli_query($con, "INSERT INTO `admin`(`name`, `fname`, `formno`, `class`, `regno`, `date`, `time`, `paidamount`,`month`,`session`,`remarks`) VALUES('$name','$fname','$formno','$class','$regno','$date','$time','$paidamount','$month','$session','$remarks')");
 
 // update status
 $status = 1;

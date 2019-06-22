@@ -72,6 +72,22 @@ date_default_timezone_set("Asia/Kolkata");
             border-radius: 4px;
             
         }
+        body{
+            background-image: url('images/bg1.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+             height: 100%;
+        }
+        a {
+    
+    color: #5B90D5;
+}
+hr {
+    border:0.5px solid black;
+}
+
+
     </style>
 
 
@@ -80,7 +96,7 @@ date_default_timezone_set("Asia/Kolkata");
 <body>
     <table>
         <tr>
-            <td width="15%" height="100" align="center" style="font-size:32px;margin-top:100px;"><a href="index.php">Student Enrollment Desk</a> </td>
+            <td width="15%" height="100" align="center" style="font-size:32px;margin-top:100px;"><a style="text-decoration: none;" href="index.php">Student Enrollment Desk</a> </td>
         </tr>
     </table>
 
@@ -93,11 +109,12 @@ date_default_timezone_set("Asia/Kolkata");
     <!-- student form -->
 
     <form action="studentaction.php" method="post" style="margin-top:30px;">
-        <table align="center" style="border: 1px solid #ddd;text-align: left;border-collapse: collapse;width: 80%;">
+        <table align="center" style="text-align: left;border-collapse: collapse;width: 80%;">
             <tr>
                 <td>
-                    <h3>Personal Details:</h3>
+                    <h3>Personal Details:</h3><hr>
                 </td>
+                 
             </tr>
             <tr>
                 <td><label for="">Name<span style="color:red">*</span></label>
@@ -126,7 +143,7 @@ date_default_timezone_set("Asia/Kolkata");
             </tr>
             <tr>
                 <td>
-                    <h3>Address:</h3>
+                    <h3>Address:</h3><hr>
                 </td>
             </tr>
             <tr>
@@ -197,7 +214,7 @@ date_default_timezone_set("Asia/Kolkata");
             
             <tr>
                 <td>
-                    <h3>Educational Details:</h3>
+                    <h3>Educational Details:</h3><hr>
                 </td>
             </tr>
 
@@ -226,7 +243,7 @@ date_default_timezone_set("Asia/Kolkata");
             </tr>
             <tr>
                 <td>
-                    <h3>Other Details:</h3>
+                    <h3>Other Details:</h3><hr>
                 </td>
             </tr>
             <tr>

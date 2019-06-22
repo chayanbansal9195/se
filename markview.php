@@ -35,7 +35,8 @@
         }
 
         td {
-            padding: 10px 10px 10px 10px;
+            text-align: center;
+            padding: 20px 20px 20px 20px;
         }
 
         th {
@@ -53,8 +54,18 @@
 
 
 <body>
-
-    <h2 style="margin-bottom:20px;">MARK ENTRY</h2>
+    <?php
+    if (isset($_SESSION['HOUSE_suc'])) {
+        //echo "<span class='alert alert-success'>".$success."</span>";
+        echo '<div class = "alert alert-success alert-dismissable">
+                       <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
+                       &times;
+                       </button>' . $_SESSION['HOUSE_suc'] . '
+                       </div>';
+        unset($_SESSION['HOUSE_suc']);
+    }
+    ?>
+    <h2 style="margin-bottom:20px;">MARK VIEW</h2>
 
 
 
@@ -62,7 +73,8 @@
 
         <tr>
             <td>
-                <span style="font-size:20px;">Class: </span>&nbsp;<select name="class" id="classname">
+                <span style="font-size:20px;">Class: </span>&nbsp;<select onchange="viewsub();" name="class" id="classname">
+                    <option value="">--Select--</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -77,7 +89,6 @@
                     <option value="12">12</option>
 
                 </select>
-                <button class="btn" onClick="viewsub();">Subjects</button>
             </td>
             <td>
 
@@ -92,14 +103,10 @@
                 <div id="viewdetails">
                     <span style="font-size:20px;">Subject: </span>&nbsp;
 
-                    <select name="subname" id="subject">
-                        <?php while ($data = mysqli_fetch_assoc($sql)) { ?>
-                            <option value="<?php echo $data['subname'] ?>">
-                                <?php echo $data['subname'] ?>
-                            </option>
-                        <?php } ?>
+                    <select name="subname" id="sub" onchange="viewexam();">
+                        <option value="">--Select--</option>
                     </select>
-                    <button class="btn" onClick="viewexam();">Exam Type</button>
+
 
             </td>
             </div>
@@ -117,13 +124,9 @@
                     <span style="font-size:20px;">Exam: </span>&nbsp;
 
                     <select name="exam" id="exam">
-                        <?php while ($data1 = mysqli_fetch_assoc($sql1)) { ?>
-                            <option value="<?php echo $data1['exam'] ?>">
-                                <?php echo $data1['exam'] ?>
-                            </option>
-                        <?php } ?>
+                        <option value="">--Select--</option>
                     </select>
-                    <button class="btn" onClick="viewstu();">Students</button>
+                    <button class="btn btn-info" onClick="viewstu();">View</button>
 
             </td>
             </div>
@@ -131,26 +134,10 @@
     </table>
     <!-- student list -->
     <div id="viewdetl">
-        <table border="2px" height="100" width="50%" align="center" style="text-align:center">
-            <tr>
-                <th style="text-align:center">Serial No</th>
-                <th style="text-align:center">Student Name</th>
-                <th style="text-align:center">Marks</th>
 
-            </tr><br>
-
-            <tr>
-                <td> </td>
-                <td></td>
-
-                <td></td>
-
-            </tr>
-
-        </table>
     </div>
     <br>
-    
+
     <div style="margin-bottom:100px">
 
 

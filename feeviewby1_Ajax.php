@@ -26,11 +26,13 @@ $sql = mysqli_query($con, $q);
 
             <td>
                 <?php
-                $sql1 = mysqli_query($con, "select * from admin where name='$dta[name]'");
+                $sql1 = mysqli_query($con, "select * from admin where name='$dta[name]' and class='$classname'");
                 while ($data = mysqli_fetch_assoc($sql1)) {
                     ?>
-                    <?php echo $data['month'] ?> ,
-                <?php } ?>
+                    <?php echo $data['month'] ?> 
+                <?php
+                echo ',';
+                } ?>
             </td>
 
         </tr>

@@ -145,8 +145,11 @@
 
         <!-- class based subject -->
         <script>
+            var className = document.getElementById('classname').value;
+
             function viewsub() {
                 var className = document.getElementById('classname').value;
+                
                 //console.log(a);
                 var httpx;
 
@@ -176,8 +179,10 @@
 
             // view students
             function viewexam() {
-                var className = document.getElementById('subject').value;
-                //console.log(a);
+                var subject = document.getElementById('subject').value;
+                var d = document.getElementById('classname').value;
+                var comboe = subject + '^' + d;
+
                 var httpx;
 
 
@@ -189,7 +194,7 @@
 
                 }
 
-                httpx.open("GET", "exam_Ajax.php?carrylink=" + className, true); //ajax engine send an asynchronous call to the server via dis_ajax.php with state_id
+                httpx.open("GET", "exam_Ajax.php?carrylink=" + comboe, true); //ajax engine send an asynchronous call to the server via dis_ajax.php with state_id
                 httpx.onreadystatechange = function() {
                     if (httpx.readyState == 4 && httpx.status == 200) {
 
@@ -205,7 +210,13 @@
             }
 
             function viewstu() {
-                var className = document.getElementById('exam').value;
+                var exam = document.getElementById('exam').value;
+                var sub = document.getElementById('subject').value;
+                var c = document.getElementById('classname').value;
+                console.log(c)
+                //console.log(className)
+
+                var combo = exam + '^' + sub+'^'+c;
                 //console.log(a);
                 var httpx;
 
@@ -218,7 +229,7 @@
 
                 }
 
-                httpx.open("GET", "stu_Ajax.php?carrylink=" + className, true); //ajax engine send an asynchronous call to the server via dis_ajax.php with state_id
+                httpx.open("GET", "stu_Ajax.php?carrylink=" + combo, true); //ajax engine send an asynchronous call to the server via dis_ajax.php with state_id
                 httpx.onreadystatechange = function() {
                     if (httpx.readyState == 4 && httpx.status == 200) {
 

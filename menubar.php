@@ -166,6 +166,9 @@ margin: 0;
     <a href="?link=000">Home</a>
 <!-- fee -->
   <a href="?link=0FEE">Fee Structure</a> 
+
+  <!-- student view -->
+  <a href="?link=0STV">Student View</a> 
     <!-- subject -->
 
     <div class="dropdown1">

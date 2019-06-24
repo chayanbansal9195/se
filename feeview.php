@@ -215,7 +215,7 @@
                         var classn = document.getElementById('classn').value;
                         var session = document.getElementById('session').value;
                         var month = document.getElementById('month').value;
-                        var combo = classn + '^' + session+'^'+month;
+                        var combo = classn + '^' + session + '^' + month;
                         console.log(combo)
                         var httpx;
 
@@ -241,7 +241,6 @@
 
 
                     }
-                    
                 </script>
         </body>
 

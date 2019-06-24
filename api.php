@@ -50,15 +50,15 @@ if (isset($_REQUEST['link'])) {
 
     <span class="hidden-sm hidden-xs pull-left date-style" style="margin-top:15px;margin-left:800px;margin-right:60px"><?php
 
-                                                                                                      $day = date("l");
+                                                                                                                        $day = date("l");
 
-                                                                                                      $today = date("F j, Y ");
+                                                                                                                        $today = date("F j, Y ");
 
-                                                                                                      echo " <b>$day &nbsp; $today</b>"; ?>
+                                                                                                                        echo " <b>$day &nbsp; $today</b>"; ?>
 
     </span>
     <style>
-      
+
     </style>
 
     <div class="menubar1" style=" margin-top: none;background-color:none;font-family: Arial, Helvetica, sans-serif; margin-top: 10px;overflow:none">
@@ -89,6 +89,12 @@ if (isset($_REQUEST['link'])) {
   include 'menubar.php';
   include $url_get->page_url;
   ?>
+
+
+
+  <script>
+    $(".alert").alert()
+  </script>
 
 </body>
 

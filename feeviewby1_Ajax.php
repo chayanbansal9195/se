@@ -4,7 +4,7 @@ $explo = explode('^', $extract);
 $classname = $explo[0];
 $session = $explo[1];
 include('dbConfig.php');
-$q = "select * from admin where class='$classname' and session='$session'";
+$q = "select distinct name from admin where class='$classname' and session='$session'";
 $sql = mysqli_query($con, $q);
 
 ?>

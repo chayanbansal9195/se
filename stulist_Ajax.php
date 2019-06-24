@@ -5,7 +5,7 @@ $classname = $explo[0];
 $subname = $explo[1];
 include('dbConfig.php');
 
-$sql = mysqli_query($con, "select * from admin where class='$classname'");
+$sql = mysqli_query($con, "select distinct name from admin where class='$classname'");
 
 ?>
 

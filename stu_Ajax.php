@@ -1,8 +1,13 @@
 <?php
-$classname = $_GET['carrylink'];
+$extract = $_GET['carrylink'];
+$explo = explode('^', $extract);
+$classname = $explo[0];
+$sub = $explo[1];
+$class = $explo[2];
+
 include('dbConfig.php');
 
-$sql = mysqli_query($con, "select * from marks where exam='$classname'");
+$sql = mysqli_query($con, "select * from marks where subname='$sub' and exam='$classname' and class='$class'");
 
 ?>
 

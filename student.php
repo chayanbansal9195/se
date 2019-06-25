@@ -48,46 +48,49 @@ date_default_timezone_set("Asia/Kolkata");
 
         /* table  */
         label {
-            
+
             width: 200px;
-            float:left;
+            float: left;
             padding: 20px 20px 20px 20px;
-            font-size:15px;
+            font-size: 15px;
         }
 
         input {
-           
+
             float: left;
             width: 250px;
             height: 5px;
             border-radius: 4px;
             padding: 20px 20px 20px 20px;
         }
-        h3{
+
+        h3 {
             padding: 20px 20px 20px 20px;
         }
-        select{
+
+        select {
             width: 250px;
             height: 40px;
             border-radius: 4px;
-            
+
         }
-        body{
+
+        body {
             background-image: url('images/bg1.jpg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-             height: 100%;
+            height: 100%;
         }
+
         a {
-    
-    color: #5B90D5;
-}
-hr {
-    border:0.5px solid black;
-}
 
+            color: #5B90D5;
+        }
 
+        hr {
+            border: 0.5px solid black;
+        }
     </style>
 
 
@@ -112,19 +115,20 @@ hr {
         <table align="center" style="text-align: left;border-collapse: collapse;width: 80%;">
             <tr>
                 <td>
-                    <h3>Personal Details:</h3><hr>
+                    <h3>Personal Details:</h3>
+                    <hr>
                 </td>
-                 
+
             </tr>
             <tr>
                 <td><label for="">Name<span style="color:red">*</span></label>
                     <input type="text" name="name" placeholder="Enter Your Name" required></td>
-                   
-                   
-                    
+
+
+
             </tr>
             <tr>
-            <td><label for="">Father Name<span style="color:red">*</span></label>
+                <td><label for="">Father Name<span style="color:red">*</span></label>
                     <input type="text" name="fname" placeholder="Father Name" required></td>
                 <td>
                     <label for="">Mother Name<span style="color:red">*</span></label>
@@ -143,7 +147,8 @@ hr {
             </tr>
             <tr>
                 <td>
-                    <h3>Address:</h3><hr>
+                    <h3>Address:</h3>
+                    <hr>
                 </td>
             </tr>
             <tr>
@@ -156,7 +161,7 @@ hr {
                     <input type="text" name="city" placeholder="City/Village" required>
                 </td>
             </tr>
-            
+
             <tr>
                 <td>
                     <label for="">Police Station<span style="color:red">*</span></label>
@@ -167,10 +172,11 @@ hr {
                     <input type="text" name="postoffice" placeholder="Post Office" required>
                 </td>
             </tr>
-            
+
             <tr>
                 <td>
                     <label for="">State<span style="color:red">*</span></label>
+
                     <?php
                     include "dbConfig.php";
 
@@ -180,6 +186,7 @@ hr {
 
                     ?>
                     <select onchange="viewdistrict();" name="state" id="states">
+                        <option value="">--Select--</option>
                         <?php while ($data = mysqli_fetch_assoc($sql)) { ?>
                             <option value="<?php echo $data['statename'] ?>">
                                 <?php echo $data['statename'] ?>
@@ -198,23 +205,20 @@ hr {
                     ?>
                     <div id="viewdetails">
                         <label for="">District<span style="color:red">*</span></label>
-                        <select name="district" id="district">
-                            <?php while ($data = mysqli_fetch_assoc($sql)) { ?>
-                                <option value="<?php echo $data['districtname'] ?>">
-                                    <?php echo $data['districtname'] ?>
-                                </option>
-                            <?php } ?>
+                        <select name="district" id="district" required>
+                            <option value="">--Select--</option>
                         </select>
 
                 </td>
                 </div>
             </tr>
 
-            
-            
+
+
             <tr>
                 <td>
-                    <h3>Educational Details:</h3><hr>
+                    <h3>Educational Details:</h3>
+                    <hr>
                 </td>
             </tr>
 
@@ -228,7 +232,7 @@ hr {
                     <input type="text" name="lschool" placeholder="Last School Name" required>
                 </td>
             </tr>
-            
+
             <tr>
                 <td>
                     <label for="">Marks Secured<span style="color:red">*</span></label>
@@ -238,12 +242,28 @@ hr {
             <tr>
                 <td>
                     <label for="">New Class<span style="color:red">*</span></label>
-                    <input type="text" name="newclass" placeholder="Applied for" required>
+                    <select type="text" name="newclass" required>
+                        <option value="">--Select--</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+
+                    </select>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <h3>Other Details:</h3><hr>
+                    <h3>Other Details:</h3>
+                    <hr>
                 </td>
             </tr>
             <tr>
@@ -256,7 +276,7 @@ hr {
                     <input type="text" name="caste" placeholder="Caste" required>
                 </td>
             </tr>
-            
+
             <tr>
                 <td>
                     <label for="">Gender<span style="color:red">*</span></label>
@@ -283,11 +303,11 @@ hr {
             </tr><br>
             <tr>
                 <td>
-                <button type="submit" class="btn btn-success" style="margin-left:500px;width:100px;height:40px;font-size:15px;padding:10px 10px 10px 10px">Enroll</button>
-                <div style="margin-bottom:100px">
+                    <button type="submit" class="btn btn-success" style="margin-left:500px;width:100px;height:40px;font-size:15px;padding:10px 10px 10px 10px">Enroll</button>
+                    <div style="margin-bottom:100px">
                 </td>
             </tr>
-            
+
 
 
 

@@ -59,14 +59,14 @@
 
 
             <?php
-            if (isset($_SESSION['HOUSE_suc'])) {
+            if (isset($_SESSION['HOUSE_fee'])) {
                 //echo "<span class='alert alert-success'>".$success."</span>";
                 echo '<div class = "alert alert-success alert-dismissable">
                  <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
-                 &times;
-                 </button>' . $_SESSION['HOUSE_suc'] . '
+                
+                 </button>' . $_SESSION['HOUSE_fee'] . '
                  </div>';
-                unset($_SESSION['HOUSE_suc']);
+                unset($_SESSION['HOUSE_fee']);
             }
             ?>
 

@@ -18,7 +18,7 @@ $time = date("h:m");
             border: none;
             text-align: center;
         }
-        
+
 
         h2 {
             text-align: center;
@@ -30,7 +30,17 @@ $time = date("h:m");
 
 <body>
     <h2>STUDENT ADMISSION VERIFICATION PAGE</h2>
+    <?php
+    if (isset($_SESSION['HOUSE_suc'])) {
 
+        echo '<div class = "alert alert-success alert-dismissable">
+                       <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
+                       
+                       </button>' . $_SESSION['HOUSE_suc'] . '
+                       </div>';
+        unset($_SESSION['HOUSE_suc']);
+    }
+    ?> 
 
     <table border="2px" height="100" width="50%" align="center" style="text-align:center">
         <tr>

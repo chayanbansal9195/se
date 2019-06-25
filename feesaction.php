@@ -33,5 +33,5 @@ if (isset($_POST["submit"])) {
     }
 }
 
-$_SESSION['HOUSE_suc']="Successfully Updated...";
+$_SESSION['HOUSE_fee']="Successfully Updated...";
 header('location:api.php?link=0FEEV');

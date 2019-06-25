@@ -17,5 +17,5 @@ foreach ($marks as $val) {
     
     $i++;
 }
-$_SESSION['HOUSE_suc']="Successfully Updated...";
+$_SESSION['HOUSE_mar']="Successfully Updated...";
 header('location:api.php?link=0MARK');

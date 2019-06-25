@@ -92,9 +92,6 @@ if (isset($_REQUEST['link'])) {
 
 
 
-  <script>
-    $(".alert").alert()
-  </script>
 
 </body>
 

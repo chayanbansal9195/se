@@ -55,14 +55,14 @@
 
 <body>
     <?php
-    if (isset($_SESSION['HOUSE_suc'])) {
-        //echo "<span class='alert alert-success'>".$success."</span>";
+    if (isset($_SESSION['HOUSE_mar'])) {
+
         echo '<div class = "alert alert-success alert-dismissable">
                        <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
-                       &times;
-                       </button>' . $_SESSION['HOUSE_suc'] . '
+                      
+                       </button>' . $_SESSION['HOUSE_mar'] . '
                        </div>';
-        unset($_SESSION['HOUSE_suc']);
+        unset($_SESSION['HOUSE_mar']);
     }
     ?>
     <h2 style="margin-bottom:20px;">MARK VIEW</h2>
@@ -149,7 +149,7 @@
 
             function viewsub() {
                 var className = document.getElementById('classname').value;
-                
+
                 //console.log(a);
                 var httpx;
 
@@ -216,7 +216,7 @@
                 console.log(c)
                 //console.log(className)
 
-                var combo = exam + '^' + sub+'^'+c;
+                var combo = exam + '^' + sub + '^' + c;
                 //console.log(a);
                 var httpx;
 

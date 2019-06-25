@@ -22,7 +22,7 @@ session_start();
 }
 $i++;
     }
-    $_SESSION['HOUSE_suc']="Successfully Updated...";
+    $_SESSION['HOUSE_sub']="Successfully Updated...";
     header('location:api.php?link=0SUBJ');
     
    

@@ -21,7 +21,7 @@
         }
 
         select {
-            width: 70px;
+            width: 90px;
             height: 40px;
             border-radius: 4px;
 

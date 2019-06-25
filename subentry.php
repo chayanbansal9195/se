@@ -33,7 +33,7 @@
         }
 
         select {
-            width: 70px;
+            width: 80px;
             height: 40px;
             border-radius: 4px;
 

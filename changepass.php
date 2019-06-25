@@ -47,7 +47,29 @@
         transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     }
 </style>
+<?php
+if (isset($_SESSION['HOUSE_suc'])) {
+    //echo "<span class='alert alert-success'>".$success."</span>";
+    echo '<div class = "alert alert-success alert-dismissable">
+                 <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
+                 
+                 </button>' . $_SESSION['HOUSE_suc'] . '
+                 </div>';
+    unset($_SESSION['HOUSE_suc']);
+}
+
+if (isset($_SESSION['HOUSE_err'])) {
+    //echo "<span class='alert alert-success'>".$success."</span>";
+    echo '<div class = "alert alert-danger alert-dismissable">
+                 <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">
+                 
+                 </button>' . $_SESSION['HOUSE_err'] . '
+                 </div>';
+    unset($_SESSION['HOUSE_err']);
+}
+?>
 <!-- panel -->
+
 <div align=center class="col-lg-12">
     <div class="panel panel-primary" style="margin:100px 350px 0px 350px;">
         <div class="panel-heading" style="background:#5B90D5;color:white">
@@ -56,19 +78,23 @@
         <!-- /.panel-heading -->
         <div style="border:2px" class="panel-body">
 
-            <form action="" method="post">
+            <form action="changepassaction.php" method="post">
                 <table align="center">
                     <tr>
                         <td width="263" height="51"><span style="font-size:1.4vw;"><em>Current Password:</em></span></td>
-                        <td width="459"><input type="text" id="user" name="pass" size="20" class="textbox" placeholder="Enter Current Password" required="required" autocomplete="off" />
+                        <td width="459"><input type="password" id="user" name="pass" size="20" class="textbox" placeholder="Enter Current Password" required="required" autocomplete="off" />
                         </td>
                     </tr>
                     <tr>
                         <td width="263" height="60"><span style="font-size:1.4vw;"><em>New Password</em></span></td>
-                        <td width="459"><input type="text" name="npass" size="20" class="textbox" placeholder="Enter New Password" id="pass" required="required" autocomplete="off" />
+                        <td width="459"><input type="password" name="npass" size="20" class="textbox" placeholder="Enter New Password" id="pass" required="required" autocomplete="off" />
                         </td>
                     </tr>
-                    <!-- checkbox -->
+                    <tr>
+                        <td width="263" height="60"><span style="font-size:1.4vw;"><em>Confirm Password</em></span></td>
+                        <td width="459"><input type="password" name="cpass" size="20" class="textbox" placeholder="Re enter Password" id="cpass" required="required" autocomplete="off" />
+                        </td>
+                    </tr>
 
                     <tr>
                         <td width="263" height="63">&nbsp;</td>
@@ -90,21 +116,3 @@
 
 
 <!-- password -->
-
-<?php
-if (isset($_POST['subm'])) {
-    extract($_POST);
-    include "dbConfig.php";
-    $sql = mysqli_query($con, "select * from login where user='$_SESSION[uid]'");
-  
-    $data = mysqli_fetch_assoc($sql);
-    if ($data['pass'] == $pass) {
-       
-        $sql1 = mysqli_query($con, "UPDATE `login` SET `pass`='$npass'where user='$_SESSION[uid]' ");
-        $_SESSION['HOUSE_suc'] = "Successfully Updated...";
-       
-    } else {
-        $_SESSION['HOUSE_suc'] = "Error in Updating";
-    }
-}
-?>

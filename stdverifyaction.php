@@ -1,4 +1,5 @@
 <?php
+session_start();
 extract($_POST);
 date_default_timezone_set("Asia/Kolkata");
 $year = date("Y");
@@ -28,5 +29,5 @@ $status = 1;
 $sql1 = mysqli_query($con, "update stdreg set status='$status' where formno='$formno'");
 
 
-
+$_SESSION['HOUSE_suc'] = "Successfully Updated...";
 header('location:api.php?link=00STD');
